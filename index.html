@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
+
+  <!-- TITLE -->
+  <title>Walimatul urus | Humaira &  Aiman</title>
+
+  <!-- WHATSAPP / FACEBOOK PREVIEW -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ms_MY">
+  <meta property="og:site_name" content="Walimatul urus ">
+  <meta property="og:title" content="Walimatul urus">
+  <meta property="og:description" content="Humaira & Aimam">
+  <meta property="og:url" content="https://walimatulurushumairadanaiman.netlify.app/">
+
+  <!-- IMPORTANT: gambar preview WhatsApp/Facebook -->
+  <meta property="og:image" content="https://walimatulurushumairadanaiman.netlify.app/Coverwasap.jpg?v=1">
+  <meta property="og:image:secure_url" content="https://walimatulurushumairadanaiman.netlify.app/Coverwasap.jpg?v=1">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Walimatul urus">
+  <meta name="twitter:description" content="Humaira & Aiman">
+  <meta name="twitter:image" content="https://walimatulurushumairadanaiman.netlify.app/Coverwasap.jpg?v=1">
+
+  <style>
+    @font-face{
+      font-family:"Peristiwa";
+      src:url("./Peristiwa.otf") format("opentype");
+      font-weight:400;
+      font-style:normal;
+      font-display:swap;
+    }
+
+    :root{
+      --text:#fff;
+      --shadow:0 12px 30px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{
+    width:100%;
+    height:100%;
+    margin:0;
+    overflow:hidden;
+}
+
+    body{
+      color:var(--text);
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+
+      background-image:url("./Cover.jpg");
+      background-position:center top;
+      background-repeat:no-repeat;
+      background-size:cover;
+
+      min-height:100vh;
+overflow:hidden;
+    }
+
+    .wrap{
+      position:relative;
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px 16px;
+    }
+
+    .card{
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      width:100%;
+      max-width:720px;
+      padding:20px;
+      position:relative;
+    }
+
+.open-hole{
+  position:absolute;
+  top:40.1%;
+  left:50%;
+  transform:translate(-50%,-50%);
+
+  width:95px;
+  height:70px;
+
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  z-index:20;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.open-hole{
+  position:absolute;
+  top:63%;              /* kedudukan bawah tarikh */
+  left:50%;
+  transform:translate(-50%,-50%);
+
+  width:auto;
+  height:auto;
+
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  z-index:20;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  padding:8px 14px;
+}
+
+.open-hole span{
+  position:relative;
+  left:0;
+  top:0;
+
+  font-family:'Cinzel', serif;
+  color:#777;           /* warna grey */
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:1.3px;
+  line-height:1;
+  text-align:center;
+  text-shadow:none;
+
+  white-space:nowrap;   /* bagi sebaris */
+  margin-top:0;
+}
+
+@media(max-width:480px){
+  .open-hole{
+    top:69%;            /* adjust bawah tarikh untuk phone */
+    width:auto;
+    height:auto;
+  }
+
+  .open-hole span{
+    font-size:13px;
+    transform:none;
+  }
+}
+    }
+  </style>
+</head>
+
+<body>
+
+  <audio id="bgm" src="./Musik.m4a" preload="auto" loop playsinline webkit-playsinline></audio>
+
+  <div class="wrap">
+    <main class="card">
+
+      <button class="open-hole" id="openBtn" type="button" aria-label="Buka Undangan">
+  <span>BUKA UNDANGAN</span>
+</button>
+
+    </main>
+  </div>
+
+  <script>
+    (function(){
+      const audio = document.getElementById("bgm");
+      const btn   = document.getElementById("openBtn");
+      const CANVA_URL = "https://artbysyaf.my.canva.site/walimatulurushumairadanaiman";
+
+      btn.addEventListener("click", function(){
+        const w = window.open("about:blank", "_blank");
+
+        try{
+          audio.muted = false;
+          audio.volume = 1;
+          const p = audio.play();
+          if (p && typeof p.catch === "function") p.catch(function(){});
+          setTimeout(function(){ try{ audio.play(); }catch(e){} }, 250);
+        }catch(e){}
+
+        setTimeout(function(){
+          if (w) w.location.href = CANVA_URL;
+          else window.location.href = CANVA_URL;
+        }, 700);
+      });
+    })();
+  </script>
+
+</body>
+</html>
